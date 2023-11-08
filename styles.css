@@ -1,0 +1,99 @@
+h1 {
+    margin: 0;
+    display: inline-block;
+    padding: 10px;
+    color: #4f0202;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    padding: 20px;
+    
+    background-color: #f0b0e2;
+}
+
+header {
+    text-align: center;
+    margin-top: 10px;
+    background-color: #f4b17a;
+    border-radius: 10px 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #2f2f2f;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+textarea,
+input[type="radio"] {
+    padding: 10px;
+    width: 100%;
+}
+
+input[type="submit"] {
+    width: 50%;
+    padding: 10px;
+    cursor: pointer;
+    border: 2px solid black;
+    background-color: rgb(3, 132, 3);
+}
+
+
+
+.swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+/* Mobile view styles */
+@media (max-width: 600px) {
+    body {
+        
+        background-color: rgb(248, 248, 162);
+    }
+
+    label {
+        
+        font-size: 20px;
+    }
+}
+
+/* Tablet and Desktop styles */
+@media (min-width: 601px) {
+    .swiper-slide {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .swiper-slide form {
+        width: 45%;
+    }
+
+    .swiper-slide form div {
+        margin-bottom: 20px;
+    }
+
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    textarea,
+    input[type="radio"] {
+        width: auto;
+    }
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>RESPONSIVE WEB FORM</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+</head>
+<body>
+<header>
+    <h1>HARBIR KAUR</h1>
+</header>
+
+<div class="swiper-container">
+
+    <div class="swiper-wrapper">
+    
+        <div class="swiper-slide">
+            <form id="personal-info">
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" placeholder="Enter your Name" required>
+                </div>
+                <div>
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" name="dob" required>
+                </div>
+                <div>
+                    <label>Gender</label>
+                    <label><input type="radio" name="gender" value="Male" required>Male</label>
+                    <label><input type="radio" name="gender" value="Female" required>Female</label>
+                </div>
+            </form>
+        </div>
+        <div class="swiper-slide">
+            <form id="contact-info">
+                <div>
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" placeholder="Enter your Email" required>
+                </div>
+                <div>
+                    <label for="phone">Phone No.</label>
+                    <input type="tel" name="phone" placeholder="Enter your Phone no." required pattern="\\d{10}">
+                </div>
+                <div>
+                    <label for="address">Address</label>
+                    <textarea name="address" placeholder="Enter your address..." required></textarea>
+                </div>
+            </form>
+        </div>
+        <div class="swiper-slide">
+            <form id="payment-info">
+                <div>
+                    <label for="cc-number">Credit Card Number</label>
+                    <input type="text" name="cc-number" placeholder="Credit Card Number" data-validate="card">
+                </div>
+                <div>
+                    <label for="expiry">Expiration Date</label>
+                    <input type="date" name="expiry" required>
+                </div>
+                <div>
+                    <label for="cvv">CVV</label>
+                    <input type="text" name="cvv" placeholder="CVV" data-validate="cvv">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="swiper-pagination"></div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    
+    var swiper = new Swiper('.swiper-container', {
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+        },
+    });
+
+    
+    var form = document.getElementById('payment-info');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        var errors = validate(form, constraints);
+  
+    });
+</script>
+
+</body>
+</html>
